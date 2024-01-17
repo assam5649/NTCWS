@@ -1,0 +1,21 @@
+.inf p {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: monospace, sans-serif;
+}
+
+.img p {
+    margin-top: 80px;
+    margin-left: 100px
+}
+
+.back-img {
+    margin-top: -690px;
+    margin-left: 600px;
+}
+
+body {
+    overflow: hidden;
+    font-family: monospace, sans-serif;
+    background-color: #F2F2F2;
+}
