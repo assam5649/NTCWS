@@ -10,16 +10,20 @@ type Data struct {
 }
 
 func main() {
-	http.HandleFunc("/api/data", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// バックエンドでのデータ処理
 		data := Data{Message: "Hello from Go backend!"}
 
 		// JSON形式でデータをフロントエンドに送信
 		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Content-Type", "application/json")
+		// CORS設定：すべてのオリジンからのリクエストを許可
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+
 		w.WriteHeader(http.StatusOK)
 		json.NewEncoder(w).Encode(data)
 	})
 
 	// サーバーを起動
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":8080", nil)
 }
